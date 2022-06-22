@@ -678,6 +678,7 @@ export async function createOrder(order, loaders, remoteUser, reqIp, userAgent, 
       await models.Activity.create({
         type: activities.TICKET_CONFIRMED,
         CollectiveId: collective.id,
+        UserId: remoteUser.id,
         data: {
           EventCollectiveId: collective.id,
           UserId: remoteUser.id,
